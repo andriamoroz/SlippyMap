@@ -57,7 +57,8 @@ void LightMaps::paintEvent(QPaintEvent *event)
     m_normalMap->render(&p, event->rect()); // Rendering normal map
     qreal lat = m_normalMap->latitude;
     qreal lng = m_normalMap->longitude;
-    QString text = QString("lat: %1\nlng: %2").arg(lat).arg(lng);
+
+    QString text = QString("zoom: %1\nlat: %2\nlng: %3").arg(zoom).arg(lat).arg(lng);
     p.setPen(Qt::black); // Setting pen color to black
     p.drawText(rect(),  Qt::AlignBottom | Qt::TextWordWrap,
                text); // Drawing attribution text
